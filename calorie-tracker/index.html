@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calorie Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Calorie Tracker</h1>
+    <div class="date-nav">
+      <button id="prev-day" aria-label="Previous day">&larr;</button>
+      <input type="date" id="date-picker" />
+      <button id="next-day" aria-label="Next day">&rarr;</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="summary">
+      <div class="goal-row">
+        <label for="goal-input">Daily goal (kcal)</label>
+        <input type="number" id="goal-input" min="0" step="1" placeholder="e.g. 2000" />
+      </div>
+
+      <div class="progress-wrap">
+        <div class="progress-bar">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+        <div class="progress-stats">
+          <span><strong id="consumed-total">0</strong> consumed</span>
+          <span><strong id="remaining-total">0</strong> remaining</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="add-entry">
+      <h2>Add food</h2>
+      <form id="entry-form">
+        <input type="text" id="food-name" placeholder="Food name" required />
+        <input type="number" id="food-calories" placeholder="Calories" min="0" step="1" required />
+        <select id="food-meal">
+          <option value="Breakfast">Breakfast</option>
+          <option value="Lunch">Lunch</option>
+          <option value="Dinner">Dinner</option>
+          <option value="Snack">Snack</option>
+        </select>
+        <button type="submit">Add</button>
+      </form>
+    </section>
+
+    <section class="log">
+      <div class="meal-group" data-meal="Breakfast">
+        <h3>Breakfast <span class="meal-total">0 kcal</span></h3>
+        <ul class="entry-list"></ul>
+      </div>
+      <div class="meal-group" data-meal="Lunch">
+        <h3>Lunch <span class="meal-total">0 kcal</span></h3>
+        <ul class="entry-list"></ul>
+      </div>
+      <div class="meal-group" data-meal="Dinner">
+        <h3>Dinner <span class="meal-total">0 kcal</span></h3>
+        <ul class="entry-list"></ul>
+      </div>
+      <div class="meal-group" data-meal="Snack">
+        <h3>Snack <span class="meal-total">0 kcal</span></h3>
+        <ul class="entry-list"></ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

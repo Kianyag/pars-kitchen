@@ -1,0 +1,230 @@
+:root {
+  --brand: #521f0f;
+  --brand-light: #7a3b21;
+  --bg: #fef9f4;
+  --card-bg: #ffffff;
+  --border: #e3d5c8;
+  --text: #2b1d14;
+  --muted: #7a6a5d;
+  --good: #4b8f3e;
+  --over: #c0392b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: var(--brand);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0 0 12px;
+}
+
+.date-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.date-nav button {
+  background: var(--brand-light);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.date-nav input[type="date"] {
+  padding: 6px;
+  border-radius: 4px;
+  border: none;
+}
+
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+section {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+}
+
+.goal-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.goal-row label {
+  font-weight: bold;
+}
+
+.goal-row input {
+  width: 120px;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.progress-bar {
+  background: #f0e5da;
+  border-radius: 8px;
+  height: 16px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--good);
+  transition: width 0.2s ease, background-color 0.2s ease;
+}
+
+.progress-fill.over {
+  background: var(--over);
+}
+
+.progress-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.add-entry h2 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+#entry-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#entry-form input[type="text"] {
+  flex: 2 1 160px;
+}
+
+#entry-form input[type="number"] {
+  flex: 1 1 100px;
+}
+
+#entry-form select {
+  flex: 1 1 120px;
+}
+
+#entry-form input,
+#entry-form select {
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+#entry-form button {
+  background-color: var(--brand);
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.log {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.meal-group {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 20px;
+  margin-bottom: 14px;
+}
+
+.meal-group h3 {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 8px;
+  font-size: 16px;
+  color: var(--brand-light);
+}
+
+.meal-total {
+  color: var(--muted);
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.entry-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.entry-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.entry-list li:last-child {
+  border-bottom: none;
+}
+
+.entry-name {
+  flex: 1;
+}
+
+.entry-calories {
+  color: var(--muted);
+  margin: 0 10px;
+  white-space: nowrap;
+}
+
+.entry-delete {
+  background: none;
+  border: none;
+  color: var(--over);
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  padding: 4px;
+}
+
+.entry-empty {
+  color: var(--muted);
+  font-style: italic;
+  padding: 6px 0;
+}
